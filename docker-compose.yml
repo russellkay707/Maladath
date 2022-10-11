@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bot:
+    # This is the image name built by the Docker build command listed in the README.md.
+    image: docker.io/library/discord-bot-wow-status1
+    restart: unless-stopped
+    environment:
+      - DISCORD_BOT_TOKEN=REDACTED
+      - DISCORD_CHANNEL_ID=1016838235311312936
+      - BLIZZARD_CLIENT_ID=REDACTED
+      - BLIZZARD_CLIENT_SECRET=REDACTED
+      - REALM_SLUGS=4738
