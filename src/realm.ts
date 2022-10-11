@@ -15,7 +15,9 @@ const {
 
 const realmStatuses: {
   [key: string]: string;
-} = {};
+} = {
+	"maladath": "DOWN",
+};
 
 /**
  * Helper for getting realm and connected realm data
@@ -23,11 +25,18 @@ const realmStatuses: {
 const getRealmData = async (slug: string) => {
   const headers = { Authorization: `Bearer ${await getBlizzardAPIToken()}` };
 
+	const fixedUp = BLIZZARD_REALM_API.replace('{REALM_SLUG}', slug)
+	
+	console.log(fixedUp)
+	console.log(headers)
+
   // Get the realm data for the realm name and connected realm ID
   const realm = await fetch(
-    BLIZZARD_REALM_API.replace('{REALM_SLUG}', slug),
+    fixedUp,
     { headers },
   ).then((response) => response.json());
+
+	console.log(realm)
 
   // Get the connected realm data for the realm status
   const connectedRealm = await fetch(

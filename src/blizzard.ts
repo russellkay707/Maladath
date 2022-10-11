@@ -19,6 +19,8 @@ const getBlizzardAPIToken = async () => {
     headers: { Authorization: `Basic ${credentials}` },
   }).then((response) => response.json());
 
+	console.log(data)
+
   return data.access_token;
 };
 

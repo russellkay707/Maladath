@@ -4,7 +4,7 @@ const DISCORD_AUTHORIZATION_HEADER = 'Bot {TOKEN}';
 
 const BLIZZARD_AUTH_API = 'https://us.battle.net/oauth/token?grant_type=client_credentials';
 
-const BLIZZARD_REALM_API = 'https://us.api.blizzard.com/data/wow/realm/{REALM_SLUG}?namespace=dynamic-us';
+const BLIZZARD_REALM_API = 'https://us.api.blizzard.com/data/wow/realm/{REALM_SLUG}?namespace=dynamic-classic-us';
 
 const RESET_MESSAGES = {
   DAILY: ':tada: Daily quests have reset',
